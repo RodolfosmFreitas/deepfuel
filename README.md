@@ -1,3 +1,3 @@
 
 
-# DeepFuel-kit is a package written in Python, designed to accelerate sustainable alternatives fuels formulation using AI.
+# DeepFuel-kit: AI-Guided Formulation of Next-Generation Sustainable Fuels
