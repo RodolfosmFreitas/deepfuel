@@ -60,3 +60,37 @@ deepfuel = "deepfuel.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+# =========================
+# UV
+# =========================
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+# =========================
+# Ruff configuration
+# =========================
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # bugbear
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=deepfuel --cov-report=term-missing"
