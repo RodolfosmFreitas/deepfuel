@@ -10,7 +10,7 @@ DeepFuel-kit is an open-source Python library for AI-guided formulation of next-
 ## Installation
 
 ```bash
-pip install xyzrender
+pip install deepfuel
 # latest development version:
 pip install --upgrade git+https://github.com/RodolfosmFreitas/deepfuel.git
 ```
