@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepfuel"
+version = "1.0.0"
+description = "DeepFuel-kit is a package written in Python, designed to accelerate sustainable alternatives fuels formulation using AI"
+authors = [
+  {name = "Rodolfo S. M. Freitas", email = "rodolfo.dasilvamachadodefreitas@qmul.ac.uk"},
+  {name = "Zhihao Xing", email = "zhihao.xing@qmul.ac.uk"},
+  {name = "Xi Jiang", email = "xi.jiang@qmul.ac.uk"}
+]
+
+keywords = ["AI", "fuel design", "combustion", "machine learning", "chemistry"]
+
+readme = "README.md"
+
+requires-python = ">=3.11"
+
+license = {text="MIT"}
+
+dependencies = [
+  "joblib>=1.5.2", 
+  "numpy>=2.3.4",
+  "pandas>=2.3.3",  
+  "scikit-learn>=1.7.2", 
+  "scipy>=1.16.2", 
+  "threadpoolctl>=3.6.0",
+  "xgboost>=3.1.1",
+  "lightgbm>=4.6.0",
+  "torch>=2.9.0",
+  "gpytorch>=1.14",
+  "deepchem>=2.5.0",
+  "gensim>=4.4.0",
+  "mapie>=1.1.0",
+  "transformers>=4.57.1",
+  "torch_geometric>=2.7.0",
+  "salib>=1.5.2",
+  "optuna>=4.5.0",
+  "wandb>=0.23.1",
+  "imageio>=2.37.2",
+  "gym>=0.26.2",
+  "stable-baselines3>=2.7.1",
+  "shimmy>=2.0.0"
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+
+[project.urls]
+homepage = "https://github.com/rodolfosmfreitas/deepfuel"
+
+# CLI entry point
+[project.scripts]
+deepfuel = "deepfuel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
