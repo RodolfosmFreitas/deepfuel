@@ -4,15 +4,13 @@
 
 # DeepFuel-kit: AI-Guided Formulation of Next-Generation Sustainable Fuels
 
-DeepFuel-kit is an open-source Python library for AI-guided formulation of next-generation sustainable fuels.
+**DeepFuel-kit** is an open-source Python library for AI-guided formulation of next-generation sustainable fuels.
 
 
 ## Installation
 
 ```bash
 pip install deepfuel
-# latest development version:
-pip install --upgrade git+https://github.com/RodolfosmFreitas/deepfuel.git
 ```
 ### From Source:
 
