@@ -1,0 +1,97 @@
+# =========================
+# Python bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
+.env
+.venv
+env/
+venv/
+
+# =========================
+# Packaging / distribution
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# =========================
+# PyPI / packaging tools
+# =========================
+*.whl
+*.tar.gz
+
+# =========================
+# Testing / coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# =========================
+# Jupyter notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Data (keep repo lightweight)
+# =========================
+data/
+datasets/
+*.csv
+*.xlsx
+*.h5
+*.pkl
+*.joblib
+
+# Allow example data if needed
+!data/example/
+
+# =========================
+# Model artifacts
+# =========================
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# =========================
+# Logs / outputs
+# =========================
+logs/
+outputs/
+results/
+*.log
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Documentation builds
+# =========================
+docs/_build/
+
+# =========================
+# Misc
+# =========================
+*.tmp
