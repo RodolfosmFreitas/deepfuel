@@ -8,7 +8,7 @@
 
 
 [![License](https://img.shields.io/github/license/RodolfosmFreitas/deepfuel)](https://github.com/RodolfosmFreitas/deepfuel/blob/main/LICENSE)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![PyPI](https://img.shields.io/pypi/v/deepfuel)
 ![Downloads](https://img.shields.io/pypi/dm/deepfuel)
 [![Powered by: uv](https://img.shields.io/badge/-uv-purple)](https://docs.astral.sh/uv)
