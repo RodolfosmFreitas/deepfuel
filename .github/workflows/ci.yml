@@ -120,7 +120,7 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
         run: |
-          twine upload --repository testpypi dist/*
+          twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
   # =========================================
   # PRODUCTION RELEASE (PyPI)
