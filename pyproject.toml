@@ -1,96 +1,125 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepfuel"
 version = "1.0.0"
-description = "DeepFuel-kit is a package written in Python, designed to accelerate sustainable alternatives fuels formulation using AI"
+description = "DeepFuel-kit is a Python framework for AI-guided sustainable aviation fuel formulation and discovery"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
 authors = [
-  {name = "Rodolfo S. M. Freitas", email = "rodolfo.dasilvamachadodefreitas@qmul.ac.uk"},
-  {name = "Zhihao Xing", email = "zhihao.xing@qmul.ac.uk"},
-  {name = "Xi Jiang", email = "xi.jiang@qmul.ac.uk"}
+  { name = "Rodolfo S. M. Freitas", email = "rodolfo.dasilvamachadodefreitas@qmul.ac.uk" },
+  { name = "Zhihao Xing", email = "zhihao.xing@qmul.ac.uk" },
+  { name = "Xi Jiang", email = "xi.jiang@qmul.ac.uk" }
 ]
 
-keywords = ["AI", "fuel design", "combustion", "machine learning", "chemistry"]
+keywords = [
+  "AI",
+  "fuel design",
+  "sustainable aviation fuel",
+  "machine learning",
+  "combustion",
+  "deep learning",
+  "chemistry"
+]
 
-readme = "README.md"
-
-requires-python = ">=3.11"
-
-license = {text="MIT"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Chemistry",
+]
 
 dependencies = [
-  "joblib>=1.5.2", 
+  "joblib>=1.5.2",
   "numpy>=2.3.4",
-  "pandas>=2.3.3",  
-  "scikit-learn>=1.7.2", 
-  "scipy>=1.16.2", 
+  "pandas>=2.3.3",
+  "scikit-learn>=1.7.2",
+  "scipy>=1.16.2",
   "threadpoolctl>=3.6.0",
   "xgboost>=3.1.1",
   "lightgbm>=4.6.0",
-  "torch>=2.9.0",
+  "torch>=2.2",
   "gpytorch>=1.14",
-  "deepchem>=2.5.0",
+  "deepchem>=2.8.0",
   "gensim>=4.4.0",
   "mapie>=1.1.0",
   "transformers>=4.57.1",
   "torch_geometric>=2.7.0",
-  "salib>=1.5.2",
+  "SALib>=1.5.2",
   "optuna>=4.5.0",
   "wandb>=0.23.1",
   "imageio>=2.37.2",
-  "gym>=0.26.2",
-  "stable-baselines3>=2.7.1",
+  "gymnasium>=1.2.1",
+  "stable-baselines3>=2.7.0",
   "shimmy>=2.0.0"
 ]
 
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent"
-]
-
 [project.urls]
-homepage = "https://github.com/rodolfosmfreitas/deepfuel"
+Homepage = "https://github.com/RodolfosmFreitas/deepfuel"
+Repository = "https://github.com/RodolfosmFreitas/deepfuel"
+Issues = "https://github.com/RodolfosmFreitas/deepfuel/issues"
 
+# =========================================
 # CLI entry point
+# =========================================
 [project.scripts]
 deepfuel = "deepfuel.cli:main"
+
+# =========================================
+# setuptools
+# =========================================
+[tool.setuptools]
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
-# =========================
-# UV
-# =========================
-[tool.uv]
-dev-dependencies = [
-    "pytest",
-    "pytest-cov",
-    "ruff",
+# =========================================
+# Dependency groups (modern uv syntax)
+# =========================================
+[dependency-groups]
+dev = [
+  "pytest",
+  "pytest-cov",
+  "ruff",
+  "build",
+  "twine"
 ]
 
-# =========================
-# Ruff configuration
-# =========================
+# =========================================
+# Ruff
+# =========================================
 [tool.ruff]
 line-length = 88
 target-version = "py310"
 
 [tool.ruff.lint]
 select = [
-    "E",  # pycodestyle errors
-    "F",  # pyflakes
-    "I",  # isort
-    "B",  # bugbear
+  "E",
+  "F",
+  "I",
+  "B"
 ]
+
 ignore = []
 
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
 
+# =========================================
+# Pytest
+# =========================================
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v --cov=deepfuel --cov-report=term-missing"
