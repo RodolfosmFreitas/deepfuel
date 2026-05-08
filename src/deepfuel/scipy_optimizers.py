@@ -51,7 +51,7 @@ def optimize_fuel(obj_fun,
         if n_features is None:
             raise ValueError("n_features must be provided if x0_sampler is None")
         def x0_sampler(n): 
-          return np.random.dirichlet(np.ones(n))
+            return np.random.dirichlet(np.ones(n))
     
     if bounds is None:
         bounds = Bounds(np.zeros(n_features), np.ones(n_features))
