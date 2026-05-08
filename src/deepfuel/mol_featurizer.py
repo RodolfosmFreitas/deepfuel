@@ -130,7 +130,7 @@ def featurizer_chemberta(smiles_list, model_path=None, device=None):
     return featurizer.detach().cpu().numpy()
 
 
-def filter_valid_smiles(smiles, labels=None, verbose=True):
+def filter_valid_smiles(smiles, labels=None, =True):
     keep_idx = []
     failed_smiles = []
 
@@ -149,7 +149,7 @@ def filter_valid_smiles(smiles, labels=None, verbose=True):
         labels = np.asarray(labels)
         labels_filt = labels[keep_idx]
 
-    if verbose and failed_smiles:
+    if  and failed_smiles:
         print(f"Failed featurization ({len(failed_smiles)} molecules):")
         print(failed_smiles)
         print("More than one atom should be present in the molecule for this featurizer to work")
@@ -161,7 +161,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
                             use_chirality=False, 
                             use_partial_charge=False,
                             mode='graph',
-                            verbose=False):
+                            =False):
     """
     Converts one or more SMILES strings into PyTorch Geometric Data objects
     using DeepChem's MolGraphConvFeaturizer ready for GCNConv, GATConv, GraphConv, and D-MPNN.
@@ -210,7 +210,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
     
     if mode == "graph":
         # --- Standard graph for GraphConv, MFConv, GATConv ---
-        if verbose == True:
+        if verbose:
             print("Featurizing with MolGraphConvFeaturizer...")
         
         # DeepChem molecular graph featurizer
@@ -259,7 +259,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
 
     elif mode == "dmpnn":
         # --- Directed Message Passing Neural Network (D-MPNN) ---
-        if verbose == True:
+        if verbose:
             print("Featurizing for D-MPNN...")
 
         for i, smi in enumerate(smiles_list):
