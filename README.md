@@ -10,6 +10,7 @@
 [![License](https://img.shields.io/github/license/RodolfosmFreitas/deepfuel)](https://github.com/RodolfosmFreitas/deepfuel/blob/main/LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![PyPI](https://img.shields.io/pypi/v/deepfuel)
+[![TestPyPI](https://img.shields.io/badge/TestPyPI-available-blue)](https://test.pypi.org/project/deepfuel/)
 ![Downloads](https://img.shields.io/pypi/dm/deepfuel)
 [![Powered by: uv](https://img.shields.io/badge/-uv-purple)](https://docs.astral.sh/uv)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
