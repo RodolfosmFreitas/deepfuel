@@ -208,7 +208,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
     
     if mode == "graph":
         # --- Standard graph for GraphConv, MFConv, GATConv ---
-        if verbose == True:
+        if verbose:
             print("Featurizing with MolGraphConvFeaturizer...")
         
         # DeepChem molecular graph featurizer
@@ -257,7 +257,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
 
     elif mode == "dmpnn":
         # --- Directed Message Passing Neural Network (D-MPNN) ---
-        if verbose == True:
+        if verbose:
             print("Featurizing for D-MPNN...")
 
         for i, smi in enumerate(smiles_list):
