@@ -263,7 +263,8 @@ class HybridOptimization:
                 print("GA: random initialization")
             else:
                 # pass callable instead of RL model
-                model_fn = lambda obs: self.model.predict(obs.reshape(1,-1), deterministic=True)[0].flatten()
+                def model_fn(obs):
+                    return self.model.predict(obs.reshape(1, -1), deterministic=True)[0].flatten()
                 sampling = RLSampling(model_fn, self.n_comp, self.bounds_oper)
                 print("GA: RL-guided sampling")
             
