@@ -2,7 +2,13 @@
 """
 Pre-processing data
 """
+from typing import Optional, Union
 
+import numpy as np
+from scipy.stats import pearsonr, spearmanr
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.feature_selection import RFE, RFECV, VarianceThreshold
+from sklearn.model_selection import KFold, cross_val_score, train_test_split
 from sklearn.preprocessing import (
     MaxAbsScaler,
     MinMaxScaler,
@@ -12,16 +18,8 @@ from sklearn.preprocessing import (
     RobustScaler,
     StandardScaler,
 )
-from deepfuel.models import get_model
-from typing import Optional, Union
-from sklearn.model_selection import train_test_split
-import numpy as np
-from scipy.stats import spearmanr, pearsonr
-from sklearn.feature_selection import VarianceThreshold
-from sklearn.model_selection import KFold, cross_val_score
-from sklearn.feature_selection import RFE, RFECV
 
-from sklearn.base import BaseEstimator, TransformerMixin
+from deepfuel.models import get_model
 
 class MADScaler(BaseEstimator, TransformerMixin):
     def __init__(self):
