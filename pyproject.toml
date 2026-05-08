@@ -9,6 +9,7 @@ description = "DeepFuel-kit is a Python framework for AI-guided sustainable avia
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
+license-files = ["LICENSE"]
 
 authors = [
   { name = "Rodolfo S. M. Freitas", email = "rodolfo.dasilvamachadodefreitas@qmul.ac.uk" },
@@ -29,7 +30,6 @@ keywords = [
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
@@ -80,7 +80,6 @@ deepfuel = "deepfuel.cli:main"
 # =========================================
 [tool.setuptools]
 include-package-data = true
-license-files = ["LICENSE"]
 
 [tool.setuptools.package-dir]
 "" = "src"
