@@ -5,16 +5,16 @@ Created on Mon Mar 23 10:13:29 2026
 @author: Rodolfo Freitas
 """
 import numpy as np
-from pymoo.core.problem import ElementwiseProblem
-from pymoo.core.sampling import Sampling
-from pymoo.core.repair import Repair
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from pymoo.algorithms.moo.nsga3 import NSGA3
-from pymoo.util.ref_dirs import get_reference_directions
+from pymoo.core.problem import ElementwiseProblem
+from pymoo.core.repair import Repair
+from pymoo.core.sampling import Sampling
+from pymoo.indicators.hv import HV
 from pymoo.operators.crossover.sbx import SBX
 from pymoo.operators.mutation.pm import PM
 from pymoo.optimize import minimize
-from pymoo.indicators.hv import HV
+from pymoo.util.ref_dirs import get_reference_directions
 
 #%% Define the problem
 class FuelBlendProblem(ElementwiseProblem):
