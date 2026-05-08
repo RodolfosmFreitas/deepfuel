@@ -7,19 +7,18 @@ Created on Thu Oct 30 12:23:49 2025
 
 import deepchem as dc
 import numpy as np
-from rdkit import Chem, RDLogger
+import torch
 
-RDLogger.DisableLog('rdApp.*')
+from rdkit import Chem, RDLogger
 from rdkit.Chem import DataStructs, rdFingerprintGenerator
+from torch_geometric.data import Data
+from transformers import AutoModel, AutoTokenizer
+
+# Optional runtime configuration
+RDLogger.DisableLog("rdApp.*")
 
 if not hasattr(np, "product"):
     np.product = np.prod
-
-import torch
-from torch_geometric.data import Data
-
-# Optional: Hugging Face Transformers for ChemBERTa
-from transformers import AutoModel, AutoTokenizer
 
 # ---------------------------------------------------------------
 # Helper Functions
