@@ -6,9 +6,6 @@ Created on Thu Oct 30 12:23:49 2025
 """
 
 import deepchem as dc
-import wrapt
-import mol2vec
-from mol2vec.features import mol2alt_sentence
 import numpy as np
 from rdkit import Chem
 from rdkit import RDLogger
