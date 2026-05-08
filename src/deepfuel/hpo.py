@@ -226,7 +226,7 @@ def tune(
         # Save model
         try:
             joblib.dump(best_model, os.path.join(save_dir, "best_model.joblib"))
-        except:
+        except Exception:
             # PyTorch or other models
             if hasattr(best_model, "save"):
                 best_model.save(os.path.join(save_dir, "best_model.pt"))
