@@ -6,7 +6,6 @@ Created on Tue Oct 28 16:47:44 2025
 """
 
 import numpy as np
-from sklearn.model_selection import train_test_split
 from mapie.regression import (
     SplitConformalRegressor,
     CrossConformalRegressor,
