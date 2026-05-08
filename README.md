@@ -16,7 +16,7 @@
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Typing: ty](https://img.shields.io/badge/typing-ty-EFC621.svg)](https://github.com/astral-sh/ty)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/RodolfosmFreitas/deepfuel/ci.yml?branch=main&logo=github-actions)](https://github.com/RodolfosmFreitas/deepfuel/actions)
-[![Codecov](https://img.shields.io/codecov/c/github/RodolfosmFreitas/deepfuel)](https://codecov.io/gh/RodolfosmFreitas/deepfuel)
+[![codecov](https://codecov.io/gh/RodolfosmFreitas/deepfuel/branch/main/graph/badge.svg)](https://codecov.io/gh/RodolfosmFreitas/deepfuel)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20045282.svg)](https://doi.org/10.5281/zenodo.20045282)
 
 ## Installation
