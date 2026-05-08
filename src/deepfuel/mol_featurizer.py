@@ -4,11 +4,9 @@ Created on Thu Oct 30 12:23:49 2025
 
 @author: Rodolfo Freitas
 """
-
 import deepchem as dc
 import numpy as np
 import torch
-
 from rdkit import Chem, RDLogger
 from rdkit.Chem import DataStructs, rdFingerprintGenerator
 from torch_geometric.data import Data
