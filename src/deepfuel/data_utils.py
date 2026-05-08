@@ -2,6 +2,7 @@
 """
 Pre-processing data
 """
+
 from typing import Optional, Union
 
 import numpy as np
@@ -20,6 +21,7 @@ from sklearn.preprocessing import (
 )
 
 from deepfuel.models import get_model
+
 
 class MADScaler(BaseEstimator, TransformerMixin):
     def __init__(self):

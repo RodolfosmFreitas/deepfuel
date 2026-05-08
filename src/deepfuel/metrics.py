@@ -1,9 +1,11 @@
 """Compute common regression metrics."""
 
-from sklearn.metrics import (mean_squared_error, mean_absolute_error, r2_score)
 import numpy as np
-from mapie.metrics.regression import (regression_coverage_score, 
-                                      regression_mean_width_score)
+from mapie.metrics.regression import (
+    regression_coverage_score,
+    regression_mean_width_score,
+)
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
 def regression_metrics(y_true, y_pred):

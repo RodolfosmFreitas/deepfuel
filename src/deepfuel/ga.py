@@ -16,6 +16,7 @@ from pymoo.operators.mutation.pm import PM
 from pymoo.optimize import minimize
 from pymoo.util.ref_dirs import get_reference_directions
 
+
 #%% Define the problem
 class FuelBlendProblem(ElementwiseProblem):
     def __init__(self, obj_fun, n_comp, n_obj, bounds_oper=None, args=(), constraints_fun=None):

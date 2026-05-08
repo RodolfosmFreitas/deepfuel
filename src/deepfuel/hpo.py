@@ -14,20 +14,13 @@ import numpy as np
 import optuna
 import torch
 from sklearn.base import clone
-from sklearn.metrics import (
-    mean_absolute_error,
-    mean_squared_error,
-    r2_score,
-)
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import KFold
 
 warnings.filterwarnings(
     "ignore",
-    message=(
-        "Choices for a categorical distribution should be "
-        "a tuple of None, bool, int, float and str"
-    ),
-)  
+    message="Choices for a categorical distribution should be a tuple of None, bool, int, float and str"
+)   
 
 # --------------------------------------------------------------------------
 # Utility scoring function
@@ -233,7 +226,7 @@ def tune(
         # Save model
         try:
             joblib.dump(best_model, os.path.join(save_dir, "best_model.joblib"))
-        except Exception:
+        except:
             # PyTorch or other models
             if hasattr(best_model, "save"):
                 best_model.save(os.path.join(save_dir, "best_model.pt"))

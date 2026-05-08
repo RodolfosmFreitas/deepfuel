@@ -2,8 +2,10 @@
 model saving and loading functionality using joblib
 """
 
-import joblib
 from pathlib import Path
+
+import joblib
+
 
 def save_model(model, filename: str = "model.joblib"):
     """Save trained model to disk."""

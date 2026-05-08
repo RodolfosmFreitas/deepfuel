@@ -5,15 +5,16 @@ Created on Mon Mar 23 14:38:17 2026
 @author: Rodolfo Freitas
 """
 
-import numpy as np
-from deepfuel.rl import FuelRL_MOEnv
-from deepfuel.ga import FuelOptimizer
-from stable_baselines3 import PPO, SAC, DDPG, TD3
-from pymoo.core.sampling import Sampling
 import gymnasium as gym
+import numpy as np
+import torch
+from pymoo.core.sampling import Sampling
+from stable_baselines3 import DDPG, PPO, SAC, TD3
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.monitor import Monitor
-import torch
+
+from deepfuel.ga import FuelOptimizer
+from deepfuel.rl import FuelRL_MOEnv
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -262,8 +263,7 @@ class HybridOptimization:
                 print("GA: random initialization")
             else:
                 # pass callable instead of RL model
-                def model_fn(obs):
-                    return self.model.predict(obs.reshape(1, -1), deterministic=True)[0].flatten()
+                model_fn = lambda obs: self.model.predict(obs.reshape(1,-1), deterministic=True)[0].flatten()
                 sampling = RLSampling(model_fn, self.n_comp, self.bounds_oper)
                 print("GA: RL-guided sampling")
             
