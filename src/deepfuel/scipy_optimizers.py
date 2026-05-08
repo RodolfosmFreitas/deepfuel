@@ -6,8 +6,9 @@ Created on Thu Nov  6 10:55:40 2025
 """
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
 import numpy as np
-from scipy.optimize import minimize, Bounds
+from scipy.optimize import Bounds, minimize
 
 
 def optimize_fuel(obj_fun,
@@ -50,8 +51,7 @@ def optimize_fuel(obj_fun,
     if x0_sampler is None:
         if n_features is None:
             raise ValueError("n_features must be provided if x0_sampler is None")
-        def x0_sampler(n): 
-            return np.random.dirichlet(np.ones(n))
+        x0_sampler = lambda n: np.random.dirichlet(np.ones(n))
     
     if bounds is None:
         bounds = Bounds(np.zeros(n_features), np.ones(n_features))

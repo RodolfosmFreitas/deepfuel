@@ -5,21 +5,30 @@ Created on Tue Nov  4 14:50:22 2025
 @author: Rodolfo Freitas
 """
 
-import torch
-from torch import Tensor
-from torch_geometric.nn import Linear, GraphConv, GCNConv, MFConv, GATConv
-from torch_geometric.nn import global_mean_pool, global_max_pool, global_add_pool
-from sklearn.utils.validation import check_is_fitted
-import torch.nn as nn
-from torch_geometric.typing import Adj
-from typing import Optional, Literal
-from torch_geometric.loader import DataLoader
-from torch_geometric.data import Batch
-from deepfuel.mol_featurizer import featurize_molecules
-import numpy as np
+from typing import List, Literal, Optional
 
-from typing import List
+import numpy as np
+import torch
+import torch.nn as nn
 from sklearn.base import BaseEstimator, RegressorMixin
+from sklearn.utils.validation import check_is_fitted
+from torch import Tensor
+from torch_geometric.data import Batch
+from torch_geometric.loader import DataLoader
+from torch_geometric.nn import (
+    GATConv,
+    GCNConv,
+    GraphConv,
+    Linear,
+    MFConv,
+    global_add_pool,
+    global_max_pool,
+    global_mean_pool,
+)
+from torch_geometric.typing import Adj
+
+from deepfuel.mol_featurizer import featurize_molecules
+
 
 class DMPNNLayer(nn.Module):
     def __init__(self, in_channels, out_channels):

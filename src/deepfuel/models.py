@@ -3,16 +3,23 @@
 ML tools to construct QSPR models
 """
 
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor, GradientBoostingRegressor
-from sklearn.neural_network import MLPRegressor
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.svm import LinearSVR
-from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
-from deepfuel.pytorch_models import DKLRegressor, DeepNet, CADGM, BayesianNNRegressor
+from sklearn.ensemble import (
+    ExtraTreesRegressor,
+    GradientBoostingRegressor,
+    RandomForestRegressor,
+)
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.linear_model import Lasso, LinearRegression, Ridge
+from sklearn.neural_network import MLPRegressor
+from sklearn.svm import LinearSVR
+from sklearn.tree import DecisionTreeRegressor
+from xgboost import XGBRegressor
+
 from deepfuel.pyg_models import GNNRegressor
+from deepfuel.pytorch_models import CADGM, BayesianNNRegressor, DeepNet, DKLRegressor
+
+
 #%% Get the models
 def get_model(name: str, **kwargs):
     """

@@ -7,13 +7,13 @@ Created on Tue Oct 28 16:47:44 2025
 
 import numpy as np
 from mapie.regression import (
-    SplitConformalRegressor,
+    ConformalizedQuantileRegressor,
     CrossConformalRegressor,
     JackknifeAfterBootstrapRegressor,
-    ConformalizedQuantileRegressor,
+    SplitConformalRegressor,
 )
-from SALib.sample import sobol as sobol_sample
 from SALib.analyze import sobol
+from SALib.sample import sobol as sobol_sample
 
 
 class ConformalizedBayesRegressor:

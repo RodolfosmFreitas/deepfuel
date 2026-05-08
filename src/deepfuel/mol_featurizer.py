@@ -4,21 +4,23 @@ Created on Thu Oct 30 12:23:49 2025
 
 @author: Rodolfo Freitas
 """
+
 import deepchem as dc
 import numpy as np
-import torch
-
 from rdkit import Chem, RDLogger
-from rdkit.Chem import DataStructs, rdFingerprintGenerator
-from torch_geometric.data import Data
-from transformers import AutoModel, AutoTokenizer
 
-# Optional compatibility fix
+RDLogger.DisableLog('rdApp.*')
+from rdkit.Chem import DataStructs, rdFingerprintGenerator
+
 if not hasattr(np, "product"):
     np.product = np.prod
 
-# Silence RDKit warnings
-RDLogger.DisableLog("rdApp.*")
+import torch
+from torch_geometric.data import Data
+
+# Optional: Hugging Face Transformers for ChemBERTa
+from transformers import AutoModel, AutoTokenizer
+
 # ---------------------------------------------------------------
 # Helper Functions
 # ---------------------------------------------------------------
@@ -208,7 +210,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
     
     if mode == "graph":
         # --- Standard graph for GraphConv, MFConv, GATConv ---
-        if verbose:
+        if verbose == True:
             print("Featurizing with MolGraphConvFeaturizer...")
         
         # DeepChem molecular graph featurizer
@@ -257,7 +259,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
 
     elif mode == "dmpnn":
         # --- Directed Message Passing Neural Network (D-MPNN) ---
-        if verbose:
+        if verbose == True:
             print("Featurizing for D-MPNN...")
 
         for i, smi in enumerate(smiles_list):

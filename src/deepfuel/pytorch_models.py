@@ -4,15 +4,16 @@ Created on Wed Oct 29 09:56:07 2025
 
 @author: Rodolfo Freitas
 """
-from sklearn.base import BaseEstimator, RegressorMixin
-from sklearn.utils.validation import check_array, check_is_fitted
+import math
+
+import gpytorch
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.init as init
-import numpy as np
-import gpytorch
-import math
+from sklearn.base import BaseEstimator, RegressorMixin
+from sklearn.utils.validation import check_array, check_is_fitted
 
 # --- Set default dtype to float32 globally ---
 torch.set_default_dtype(torch.float32)
