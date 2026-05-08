@@ -5,20 +5,29 @@ Created on Thu Nov  6 08:46:18 2025
 @author: Rodolfo Freitas
 """
 
-import os
 import json
+import os
+import warnings
+
 import joblib
 import numpy as np
 import optuna
-from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
-from sklearn.model_selection import KFold
 import torch
 from sklearn.base import clone
-import warnings
+from sklearn.metrics import (
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score,
+)
+from sklearn.model_selection import KFold
+
 warnings.filterwarnings(
     "ignore",
-    message="Choices for a categorical distribution should be a tuple of None, bool, int, float and str"
-)   
+    message=(
+        "Choices for a categorical distribution should be "
+        "a tuple of None, bool, int, float and str"
+    ),
+)  
 
 # --------------------------------------------------------------------------
 # Utility scoring function
