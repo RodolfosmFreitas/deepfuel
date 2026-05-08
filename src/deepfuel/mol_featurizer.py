@@ -130,7 +130,7 @@ def featurizer_chemberta(smiles_list, model_path=None, device=None):
     return featurizer.detach().cpu().numpy()
 
 
-def filter_valid_smiles(smiles, labels=None, =True):
+def filter_valid_smiles(smiles, labels=None, verbose=True):
     keep_idx = []
     failed_smiles = []
 
@@ -149,7 +149,7 @@ def filter_valid_smiles(smiles, labels=None, =True):
         labels = np.asarray(labels)
         labels_filt = labels[keep_idx]
 
-    if  and failed_smiles:
+    if verbose and failed_smiles:
         print(f"Failed featurization ({len(failed_smiles)} molecules):")
         print(failed_smiles)
         print("More than one atom should be present in the molecule for this featurizer to work")
@@ -161,7 +161,7 @@ def featurizer_mol_to_graph(smiles_list,labels=None,
                             use_chirality=False, 
                             use_partial_charge=False,
                             mode='graph',
-                            =False):
+                            verbose=False):
     """
     Converts one or more SMILES strings into PyTorch Geometric Data objects
     using DeepChem's MolGraphConvFeaturizer ready for GCNConv, GATConv, GraphConv, and D-MPNN.
