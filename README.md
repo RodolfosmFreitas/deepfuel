@@ -61,6 +61,10 @@ pip install -e .
 # or straight from git
 pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
 ```
+### Dependencies
+
+- **Core**: `numpy`, `pytorch`, `rdkit`
+  
 ---
 
 ## Quick Start
