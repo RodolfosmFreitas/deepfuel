@@ -68,3 +68,13 @@ pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
 ---
 
 ## Quick Start
+
+---
+
+## Contributors
+
+- [Rodolfo Freitas (@RodolfosmFreitas)](https://github.com/RodolfosmFreitas) 
+
+## Contributing & Contact
+
+Contributions welcome! Please open an issue or pull request and get in touch with any questions [here](https://github.com/RodolfosmFreitas/deepfuel/issues).
