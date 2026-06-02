@@ -129,18 +129,18 @@ if __name__ == "__main__":
     
     
     #%% Load the pre-trained compositional mapping
-    model_CN        = load_model('Models/MLP-predictor-DCN/best_model.joblib')
-    scaler_CN       = load_model('Models/MLP-predictor-DCN/scalery.joblib')
-    model_YSI       = load_model('Models/MLP-predictor-YSI/best_model.joblib')
-    scaler_YSI      = load_model('Models/MLP-predictor-YSI/scalery.joblib')
-    model_rho       = load_model('Models/MLP-predictor-rho/best_model.joblib')
-    scaler_rho      = load_model('Models/MLP-predictor-rho/scalery.joblib')
-    model_FP        = load_model('Models/MLP-predictor-FP/best_model.joblib')
-    scaler_FP       = load_model('Models/MLP-predictor-FP/scalery.joblib')
-    model_LHV       = load_model('Models/MLP-predictor-LHV/best_model.joblib')
-    scaler_LHV      = load_model('Models/MLP-predictor-LHV/scalery.joblib')
-    model_BP        = load_model('Models/MLP-predictor-BP/best_model.joblib')
-    scaler_BP       = load_model('Models/MLP-predictor-BP/scalery.joblib')
+    model_CN        = load_model('Pre-Trained-Models/MLP-predictor-DCN/best_model.joblib')
+    scaler_CN       = load_model('Pre-Trained-Models/MLP-predictor-DCN/scalery.joblib')
+    model_YSI       = load_model('Pre-Trained-Models/MLP-predictor-YSI/best_model.joblib')
+    scaler_YSI      = load_model('Pre-Trained-Models/MLP-predictor-YSI/scalery.joblib')
+    model_rho       = load_model('Pre-Trained-Models/MLP-predictor-rho/best_model.joblib')
+    scaler_rho      = load_model('Pre-Trained-Models/MLP-predictor-rho/scalery.joblib')
+    model_FP        = load_model('Pre-Trained-Models/MLP-predictor-FP/best_model.joblib')
+    scaler_FP       = load_model('Pre-Trained-Models/MLP-predictor-FP/scalery.joblib')
+    model_LHV       = load_model('Pre-Trained-Models/MLP-predictor-LHV/best_model.joblib')
+    scaler_LHV      = load_model('Pre-Trained-Models/MLP-predictor-LHV/scalery.joblib')
+    model_BP        = load_model('Pre-Trained-Models/MLP-predictor-BP/best_model.joblib')
+    scaler_BP       = load_model('Pre-Trained-Models/MLP-predictor-BP/scalery.joblib')
     
     
     '''
