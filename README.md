@@ -19,12 +19,12 @@
 [![codecov](https://codecov.io/gh/RodolfosmFreitas/deepfuel/branch/main/graph/badge.svg)](https://codecov.io/gh/RodolfosmFreitas/deepfuel)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20045282.svg)](https://doi.org/10.5281/zenodo.20045282)
 
-DeepFuel-kit empowers researchers and innovators to utilise advanced AI, molecular feature extraction, and predictive modelling tools, thereby promoting the efficient, insightful, and environmentally sustainable design of next-generation fuels. The application of DeepFuel includes (but not limited to):
+DeepFuel-kit empowers researchers and innovators to utilise advanced AI, molecular feature extraction, and predictive modelling tools, thereby promoting the efficient, insightful, and environmentally sustainable design of next-generation fuels. The application of DeepFuel includes (but is not limited to):
 1. **“Drop-in” alternative fuel & fuel additive design**
    - Formulation of “drop-in” fuel mixtures (such as SAF): This involves designing fuels that meet performance and regulatory standards and are fully compatible with existing infrastructure and engines without requiring modifications. Using components produced from renewable feedstocks, the designed fuel blends reduce lifecycle greenhouse gas (GHG) emissions. It might involve selecting or developing new fuel components or molecules.
    - Development of fuel additives for blends with user-defined properties: This involves selection or development of new fuel components or molecules, and adding them to existing fuels (including conventional fossil fuels), achieving specific outcomes such as targeted physicochemical properties (e.g. lower freezing point & viscosity) for enhanced performance.
 2. **Low-carbon multi-fuel design**
-   - Formulation of low-carbon fuel mixtures based on existing low-zero carbon fuels: This involves combining existing low or zero-carbon fuels (e.g. ammonia, biodiesel, dimethyl ether, methanol), to produce a final multi-fuel product that offers optimal burning and reduces lifecycle GHG emissions without requiring new components/molecules. New technologies may be needed to burn the formulated multi-fuel.
+   - Formulation of low-carbon fuel mixtures based on existing low- or zero-carbon fuels: This involves combining existing low or zero-carbon fuels (e.g. ammonia, biodiesel, dimethyl ether, methanol) to produce a final multi-fuel product that offers optimal combustion and reduces lifecycle GHG emissions without requiring new components/molecules. New technologies may be needed to burn the formulated multi-fuel.
 
 ## Table of Contents
 
