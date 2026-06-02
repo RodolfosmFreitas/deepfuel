@@ -49,25 +49,43 @@ DeepFuel-kit empowers researchers and innovators to utilise advanced AI, molecul
 ## Installation
 
 ### From PyPI
+
 ```bash
 pip install deepfuel
 ```
-### From Source:
- 
+
+### From Source
+
 ```bash
 git clone https://github.com/RodolfosmFreitas/deepfuel.git
 cd deepfuel
 pip install .
-# install in editable mode
+
+# Install in editable mode
 pip install -e .
-# or straight from git
+
+# Or install directly from GitHub
 pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
 ```
+
 ### Dependencies
 
-- **Core**: `numpy`, `pytorch`, `rdkit`
-  
----
+DeepFuel relies on the following core scientific computing, machine learning, and uncertainty quantification libraries:
+
+* **Scientific Computing**: `numpy`, `pandas`, `scipy`
+* **Machine Learning**: `scikit-learn`, `xgboost`, `lightgbm`
+* **Deep Learning**: `torch`, `gpytorch`, `torch-geometric`, `transformers`
+* **Chemoinformatics**: `deepchem`
+* **Molecular Embeddings**: `gensim`
+* **Uncertainty Quantification**: `mapie`
+* **Sensitivity Analysis**: `SALib`
+* **Optimization**: `optuna`
+* **Reinforcement Learning**: `gymnasium`, `stable-baselines3`, `shimmy`
+* **Experiment Tracking**: `wandb`
+* **Utilities**: `joblib`, `threadpoolctl`, `imageio`
+
+All dependencies are installed automatically when installing DeepFuel via `pip`.
+
 
 ## Quick Start
 
