@@ -28,7 +28,7 @@
 ---
 
 ## Key Features
-
+- **Molecular Featurization at Scale**: High-throughput molecular featurization pipelines for classical descriptors and deep learning embeddings, enabling large-scale fuel property prediction
 
 ---
 
