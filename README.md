@@ -88,6 +88,10 @@ All dependencies are installed automatically when installing DeepFuel via `pip`.
 
 ## Quick Start
 
+DeepFuel provides tools for fuel property prediction, inverse fuel design, and multi-objective fuel formulation.
+
+### 1. Property Prediction
+
 Train a graph neural network (GNN) to predict a fuel property directly from molecular SMILES strings.
 
 ```python
@@ -95,14 +99,14 @@ import pandas as pd
 from deepfuel.data_utils import prepare_data
 from deepfuel.models import get_model
 
-# Load fuel property dataset
+# Load dataset
 data = pd.read_excel("data-fuel-properties.xlsx")
 
-# Select target property (e.g., Yield Sooting Index)
+# Select target property
 X = data["SMILES"].tolist()
 y = data["YSI"].values.reshape(-1, 1)
 
-# Train/test split and scaling
+# Split and preprocess
 X_train, X_test, y_train, y_test, scalerX, scalery = prepare_data(
     X,
     y,
@@ -111,7 +115,7 @@ X_train, X_test, y_train, y_test, scalerX, scalery = prepare_data(
     scaler_y="mad",
 )
 
-# Create and train a Graph Neural Network
+# Create model
 model = get_model(
     "GNN",
     conv_layer="MFConv",
@@ -119,17 +123,18 @@ model = get_model(
     batch_size=64,
 )
 
+# Train model
 model.fit(X_train, y_train)
 
-# Predict fuel properties
+# Predict
 y_pred = scalery.inverse_transform(model.predict(X_test))
 
-print("Predictions:", y_pred[:5])
+print(y_pred[:5])
 ```
 
-### Hyperparameter Optimization
+#### Hyperparameter Optimisation
 
-DeepFuel provides Optuna-based hyperparameter optimization:
+DeepFuel provides Optuna-based hyperparameter optimisation:
 
 ```python
 from deepfuel.hpo import tune
@@ -158,8 +163,129 @@ DeepFuel currently supports modelling of:
 * Yield Sooting Index (`YSI`)
 * Derived Cetane Number (`DCN`)
 
+---
+
+### 2. Inverse Fuel Design
+
+Design a sustainable aviation fuel (SAF) blend that reproduces target fuel properties while satisfying regulatory constraints.
+
+```python
+import numpy as np
+import pandas as pd
+
+from deepfuel.io import load_model
+from deepfuel.mol_featurizer import featurize_molecules
+from deepfuel.scipy_optimizers import optimize_fuel
+
+# Load candidate molecules
+data = pd.read_excel("SAF-palette.xlsx")
+smiles = data["SMILES"].tolist()
+
+# Generate molecular embeddings
+phi = featurize_molecules(
+    featurizer="Mol2VecFingerprint",
+    smiles_list=smiles,
+)
+
+# Load pre-trained surrogate models
+model = load_model("Models/MLP-predictor-rho-LHV-FP/best_model.joblib")
+
+# Target Jet-A properties
+target = np.array([
+    0.806,  # Density
+    42.8,   # Lower Heating Value
+    47.0    # Flash Point
+])
+
+# Perform inverse design
+best_x, best_loss, solutions = optimize_fuel(
+    objective_function,
+    args=(phi, target),
+    optimizer="SLSQP",
+    n_features=len(smiles),
+    n_starts=1000,
+)
+
+print("Optimal blend composition:")
+print(best_x)
 ```
+
+---
+
+### 3. Multi-Objective Fuel Formulation
+
+Optimise fuel blends using hybrid Genetic Algorithm and Reinforcement Learning strategies while satisfying fuel-property constraints.
+
+```python
+import pandas as pd
+
+from deepfuel.io import load_model
+from deepfuel.mol_featurizer import featurize_molecules
+from deepfuel.hybrid_optim import HybridOptimization
+
+# Load candidate fuel molecules
+data = pd.read_excel("Diesel-palette.xlsx")
+smiles = data["SMILES"].tolist()
+
+# Generate molecular representations
+phi = featurize_molecules(
+    featurizer="Mol2VecFingerprint",
+    smiles_list=smiles,
+)
+
+# Load surrogate models
+model_dcn = load_model("Models/MLP-predictor-DCN/best_model.joblib")
+model_ysi = load_model("Models/MLP-predictor-YSI/best_model.joblib")
+
+# Define optimisation objectives
+def objective_function(x):
+    blend = x[None, :] @ phi
+
+    dcn = model_dcn.predict(blend)
+    ysi = model_ysi.predict(blend)
+
+    return [
+        -dcn,   # Maximise cetane number
+         ysi    # Minimise soot emissions
+    ]
+
+# Hybrid optimization
+optimizer = HybridOptimization(
+    n_comp=len(smiles),
+    obj_fun=objective_function,
+    n_obj=2,
+    n_cycles=3,
+)
+
+result, agent = optimizer.run()
+
+print("Pareto-optimal fuel formulations:")
+print(result.X)
 ```
+
+---
+
+### Typical Applications
+
+* Sustainable Aviation Fuel (SAF) formulation
+* Renewable diesel (HVO) design
+* Fuel additive discovery
+* Low-soot fuel optimization
+* Multi-fuel blending
+* Surrogate-assisted combustion modeling
+* Molecular property prediction
+* Inverse molecular and fuel design
+
+### Supported Optimisation Methods
+
+* Gradient-based optimisation (SLSQP, trust-constr)
+* Genetic Algorithms (NSGA-II)
+* Hybrid Genetic Algorithm + Reinforcement Learning
+* Multi-objective Pareto optimisation
+* Constraint-aware fuel formulation
+* Hyperparameter optimisation with Optuna
+* Uncertainty quantification with MAPIE and EnbPI
+
 
 ---
 
