@@ -86,8 +86,80 @@ DeepFuel relies on the following core scientific computing, machine learning, an
 
 All dependencies are installed automatically when installing DeepFuel via `pip`.
 
-
 ## Quick Start
+
+Train a graph neural network (GNN) to predict a fuel property directly from molecular SMILES strings.
+
+```python
+import pandas as pd
+from deepfuel.data_utils import prepare_data
+from deepfuel.models import get_model
+
+# Load fuel property dataset
+data = pd.read_excel("data-fuel-properties.xlsx")
+
+# Select target property (e.g., Yield Sooting Index)
+X = data["SMILES"].tolist()
+y = data["YSI"].values.reshape(-1, 1)
+
+# Train/test split and scaling
+X_train, X_test, y_train, y_test, scalerX, scalery = prepare_data(
+    X,
+    y,
+    train_size=0.8,
+    scaler_X=None,
+    scaler_y="mad",
+)
+
+# Create and train a Graph Neural Network
+model = get_model(
+    "GNN",
+    conv_layer="MFConv",
+    epochs=500,
+    batch_size=64,
+)
+
+model.fit(X_train, y_train)
+
+# Predict fuel properties
+y_pred = scalery.inverse_transform(model.predict(X_test))
+
+print("Predictions:", y_pred[:5])
+```
+
+### Hyperparameter Optimization
+
+DeepFuel provides Optuna-based hyperparameter optimization:
+
+```python
+from deepfuel.hpo import tune
+
+study, best_model = tune(
+    model,
+    suggest_params,
+    X_train,
+    y_train,
+    metric="r2",
+    n_splits=5,
+    n_trials=100,
+)
+```
+
+### Supported Fuel Properties
+
+DeepFuel currently supports modelling of:
+
+* Boiling Point (`BP`)
+* Density (`rho`)
+* Lower Heating Value (`LHV`)
+* Freezing Point (`FP`)
+* Surface Tension (`ST`)
+* Threshold Sooting Index (`TF`)
+* Yield Sooting Index (`YSI`)
+* Derived Cetane Number (`DCN`)
+
+```
+```
 
 ---
 
@@ -99,4 +171,8 @@ All dependencies are installed automatically when installing DeepFuel via `pip`.
 
 ## Contributing & Contact
 
-Contributions are welcome! Please open an issue or submit a pull request [here](https://github.com/RodolfosmFreitas/deepfuel/issues). If you have any questions, feel free to get in touch.
+Contributions are welcome! Please open an issue or submit a pull request [here](https://github.com/RodolfosmFreitas/deepfuel/issues). 
+
+For questions, suggestions, or collaboration opportunities, please contact Rodolfo Freitas at <rodolfo.dasilvamachadodefreitas@qmul.ac.uk>.
+
+See the repository issue tracker for bug reports, feature requests, and discussions.
