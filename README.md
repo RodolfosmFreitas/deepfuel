@@ -79,7 +79,7 @@ DeepFuel relies on the following core scientific computing, machine learning, an
 * **Molecular Embeddings**: `gensim`
 * **Uncertainty Quantification**: `mapie`
 * **Sensitivity Analysis**: `SALib`
-* **Optimization**: `optuna`
+* **Optimization**: `optuna`, `pymoo`
 * **Reinforcement Learning**: `gymnasium`, `stable-baselines3`, `shimmy`
 * **Experiment Tracking**: `wandb`
 * **Utilities**: `joblib`, `threadpoolctl`, `imageio`
