@@ -80,4 +80,4 @@ pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
 
 ## Contributing & Contact
 
-Contributions welcome! Please open an issue or pull request and get in touch with any questions [here](https://github.com/RodolfosmFreitas/deepfuel/issues).
+Contributions are welcome! Please open an issue or submit a pull request [here](https://github.com/RodolfosmFreitas/deepfuel/issues). If you have any questions, feel free to get in touch.
