@@ -19,15 +19,27 @@
 [![codecov](https://codecov.io/gh/RodolfosmFreitas/deepfuel/branch/main/graph/badge.svg)](https://codecov.io/gh/RodolfosmFreitas/deepfuel)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20045282.svg)](https://doi.org/10.5281/zenodo.20045282)
 
+## Table of Contents
+
+1. [Key Features](#key-features)
+2. [Installation](#installation)
+3. [Quick Start](#quick-start)
+
+---
+
+## Key Features
+
+
+---
+
 ## Installation
 
+### From PyPI
 ```bash
 pip install deepfuel
 ```
 ### From Source:
-
-Using pip: 
-
+ 
 ```bash
 git clone https://github.com/RodolfosmFreitas/deepfuel.git
 cd deepfuel
@@ -36,3 +48,5 @@ pip install .
 pip install -e .
 # or straight from git
 pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
+
+## Quick Start
