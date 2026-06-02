@@ -73,7 +73,8 @@ pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
 
 ## Contributors
 
-- [Rodolfo Freitas (@RodolfosmFreitas)](https://github.com/RodolfosmFreitas) 
+- Rodolfo Freitas ([@RodolfosmFreitas](https://github.com/RodolfosmFreitas)) — [rodolfosmfreitas@gmail.com](mailto:rodolfosmfreitas@gmail.com)
+- Xi Jiang — [xi.jiang@qmul.ac.uk](mailto:xi.jiang@qmul.ac.uk)
 
 ## Contributing & Contact
 
