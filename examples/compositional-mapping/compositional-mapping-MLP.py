@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 22 10:26:40 2026
-
-@author: Rodolfo Freitas
-"""
 
 from matplotlib import pyplot as plt
 import time
