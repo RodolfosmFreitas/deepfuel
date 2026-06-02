@@ -31,7 +31,8 @@ DeepFuel-kit empowers researchers and innovators to utilise advanced AI, molecul
 1. [Key Capabilities](#key-capabilities)
 2. [Installation](#installation)
 3. [Quick Start](#quick-start)
-4. [Contributors](#contributors)
+4. [Developers](#developers)
+5. [Contributing & Contact](#contributing--contact)
 
 ---
 
@@ -72,7 +73,7 @@ pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
 
 ---
 
-## Contributors
+## Developers
 
 - Rodolfo Freitas ([@RodolfosmFreitas](https://github.com/RodolfosmFreitas)) — [rodolfo.dasilvamachadodefreitas@qmul.ac.uk](mailto:rodolfo.dasilvamachadodefreitas@qmul.ac.uk)
 - Zhihao Xing([@Zhihao-07](https://github.com/Zhihao-07)) — [zhihao.xing@qmul.ac.uk](mailto:zhihao.xing@qmul.ac.uk)
