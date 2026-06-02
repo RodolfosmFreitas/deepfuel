@@ -279,7 +279,7 @@ print(result.X)
 ### Supported Optimisation Methods
 
 * Gradient-based optimisation (SLSQP, trust-constr)
-* Genetic Algorithms (NSGA-II)
+* Genetic Algorithms (NSGA-II & NSGA-III)
 * Hybrid Genetic Algorithm + Reinforcement Learning
 * Multi-objective Pareto optimisation
 * Constraint-aware fuel formulation
