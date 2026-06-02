@@ -19,6 +19,14 @@
 [![codecov](https://codecov.io/gh/RodolfosmFreitas/deepfuel/branch/main/graph/badge.svg)](https://codecov.io/gh/RodolfosmFreitas/deepfuel)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20045282.svg)](https://doi.org/10.5281/zenodo.20045282)
 
+DeepFuel-kit empowers researchers and innovators to utilise advanced AI, molecular feature extraction, and predictive modelling tools, thereby promoting the efficient, insightful, and environmentally sustainable design of next-generation fuels. The application of DeepFuel includes (but not limited to):
+1. **“Drop-in” alternative fuel & fuel additive design**
+   -
+   -
+2. **Low-carbon multi-fuel design**
+   -
+   -
+
 ## Table of Contents
 
 1. [Key Capabilities](#key-capabilities)
