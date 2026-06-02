@@ -48,5 +48,7 @@ pip install .
 pip install -e .
 # or straight from git
 pip install git+https://github.com/RodolfosmFreitas/deepfuel.git
+```
+---
 
 ## Quick Start
