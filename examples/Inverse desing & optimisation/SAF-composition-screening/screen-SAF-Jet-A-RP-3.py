@@ -76,10 +76,10 @@ if __name__ == "__main__":
     classes = data['Class'].tolist() 
     
     #%% Load the pre-trained compositional mapping
-    model       = load_model('Models/MLP-predictor-rho-LHV-FP/best_model.joblib')
-    scaler = load_model('Models/MLP-predictor-rho-LHV-FP/scalery.joblib')
-    model_TF     = load_model('Models/MLP-predictor-TF/best_model.joblib')
-    scaler_TF = load_model('Models/MLP-predictor-TF/scalery.joblib')
+    model       = load_model('Pre-Trained-Models/MLP-predictor-rho-LHV-FP/best_model.joblib')
+    scaler = load_model('Pre-Trained-Models/MLP-predictor-rho-LHV-FP/scalery.joblib')
+    model_TF     = load_model('Pre-Trained-Models/MLP-predictor-TF/best_model.joblib')
+    scaler_TF = load_model('Pre-Trained-Models/MLP-predictor-TF/scalery.joblib')
     
     phi = featurize_molecules(featurizer='Mol2VecFingerprint', smiles_list=SMILES)
 
