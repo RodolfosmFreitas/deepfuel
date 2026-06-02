@@ -31,6 +31,7 @@ DeepFuel-kit empowers researchers and innovators to utilise advanced AI, molecul
 1. [Key Capabilities](#key-capabilities)
 2. [Installation](#installation)
 3. [Quick Start](#quick-start)
+4. [Contributors](#contributors)
 
 ---
 
