@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 23 14:51:01 2026
 
-@author: Rodolfo Freitas
-"""
 from matplotlib import pyplot as plt
 import time
 import argparse
