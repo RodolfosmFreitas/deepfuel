@@ -21,14 +21,19 @@
 
 ## Table of Contents
 
-1. [Key Features](#key-features)
+1. [Key Capabilities](#key-capabilities)
 2. [Installation](#installation)
 3. [Quick Start](#quick-start)
 
 ---
 
-## Key Features
-- **Molecular Featurization at Scale**: High-throughput molecular featurization pipelines for classical descriptors and deep learning embeddings, enabling large-scale fuel property prediction
+## Key Capabilities
+- **Molecular Featurization at Scale**: High-throughput molecular featurization pipelines for classical descriptors and deep learning embeddings, enabling large-scale fuel property prediction.
+- **Predictive & Generative Modelling**: State-of-the-art predictive models for property estimation and generative frameworks for designing novel sustainable fuel candidates.
+- **Inverse Fuel Design**: Advanced inverse design strategies leveraging diffusion models, genetic algorithms, SciPy optimisation, and reinforcement learning to explore chemical space and optimise fuel formulations.
+- **Uncertainty Quantification**: Integration of methods like EnbPI for robust prediction intervals to ensure reliable surrogate model predictions.
+- **Simulation Acceleration**: ML surrogates to accelerate 0D and multidimensional combustion simulations while maintaining accuracy.
+- **Data Integration & Visualisation**: Tools for combining experimental, simulation, and computational data with interactive visualisations to explore fuel performance efficiently.
 
 ---
 
