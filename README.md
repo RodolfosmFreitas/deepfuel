@@ -295,6 +295,8 @@ print(result.X)
 - Zhihao Xing([@Zhihao-07](https://github.com/Zhihao-07)) — [zhihao.xing@qmul.ac.uk](mailto:zhihao.xing@qmul.ac.uk)
 - Xi Jiang — [xi.jiang@qmul.ac.uk](mailto:xi.jiang@qmul.ac.uk)
 
+---
+
 ## Contributing & Contact
 
 Contributions are welcome! Please open an issue or submit a pull request [here](https://github.com/RodolfosmFreitas/deepfuel/issues). 
